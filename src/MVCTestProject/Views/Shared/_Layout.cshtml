@@ -11,39 +11,15 @@
     </style>
 </head>
 <body>
-    <!-- TODO:  Put into a partial view -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <a class="brand" href="#">Project name</a>
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li>@Html.ActionLink("Home", "Index")</li>
-                        <li>@Html.ActionLink("About", "About")</li>
-                        <li>@Html.ActionLink("Contact", "Contact")</li>
-                    </ul>
-                </div>
-                <!--/.nav-collapse -->
-            </div>
+    @Html.Partial("_Menu")
+
+    <div id="wrap">
+        <div class="container clear-top" id="main">
+            @RenderBody()
         </div>
     </div>
 
-    <div id="wrap">
-    <div class="container clear-top" id="main">
-        @RenderBody()
-    </div>
-        </div>
-    <!-- TODO:  Put into a partial view -->
-    <footer class="footer">
-        <div class="container">
-            Developed by CompanyName &copy;@DateTime.Now.Year
-        </div>
-    </footer>
+    @Html.Partial("_Footer")
 
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="~/_Assets/js/bootstrap.min.js"></script>
